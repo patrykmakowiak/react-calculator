@@ -1,6 +1,8 @@
 # react-calculator
 
-## [Live demo](https://zen-goodall-b62557.netlify.com/)
+![calculator](screenshots/calculator.png)
+
+### [Live demo](https://zen-goodall-b62557.netlify.com/)
 
 # Stack:
 - react
