@@ -1,3 +1,13 @@
+# react-calculator
+
+## [Live demo](https://zen-goodall-b62557.netlify.com/)
+
+# Stack:
+- react
+- styled-components
+- i18next
+- mathjs
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
