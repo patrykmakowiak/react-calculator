@@ -8,7 +8,7 @@ import {
 
 const CALCULATOR_BUTTONS = [
   { value: 'AC' },
-  { value: 'C', icon: (<FiDelete />) },
+  { value: 'C', key: 'Backspace', icon: (<FiDelete />) },
   { value: '%', icon: (<FaPercent />) },
   { value: '/', icon: (<FaDivide />), color: '#f39c12' },
   { value: '7' },
@@ -23,10 +23,10 @@ const CALCULATOR_BUTTONS = [
   { value: '2' },
   { value: '3' },
   { value: '+', icon: (<FaPlus />), color: '#f39c12' },
-  { value: '.', icon: ',' },
+  { value: '.', icon: ',', key: ',' },
   { value: '0' },
   {
-    value: '=', width: '50%', icon: (<FaEquals />), backgroundColor: '#f39c12',
+    value: '=', key: 'Enter', width: '50%', icon: (<FaEquals />), backgroundColor: '#f39c12',
   },
 ];
 
