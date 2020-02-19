@@ -44,7 +44,15 @@ const useCalculate = () => {
 
   const handleKeyboard = useCallback((e) => {
     const selectedButton = calculatorButtons
-      .find(({ value, key }) => (value === e.key || key === e.key));
+      .find(({ value, key, keyCodes }) => {
+        if (e.key) {
+          return value === e.key || key === e.key;
+        }
+        if (e.keyCode) {
+          return keyCodes.find((keyCode) => keyCode === e.keyCode);
+        }
+        return false;
+      });
 
     if (selectedButton) {
       addValueToExpression(selectedButton.value);
