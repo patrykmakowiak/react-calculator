@@ -23,11 +23,17 @@ export const Header = styled.div`
 export const Screen = styled.div`
   width: 100%;
   height: 25%;
-  padding: 30px 10px 30px 10px;
+  padding: 15px 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   text-align: right;
+`;
+
+export const Thumb = styled.div`
+  background-color: #f39c12;
+  border-radius: 4px;
+  cursor: pointer;
 `;
 
 export const Expression = styled.div`
