@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import * as S from './styles';
 import useCalculate from '../../hooks/useCalculate';
@@ -18,12 +19,22 @@ const Calculator = () => {
         {t('Calculator')}
       </S.Header>
       <S.Screen>
-        <S.Expression showResult={showResult}>
-          {expression}
-        </S.Expression>
-        <S.Result showResult={showResult}>
-          {evaluatedExpression}
-        </S.Result>
+        <Scrollbars
+          style={{ height: showResult ? 42 : 64 }}
+          renderThumbHorizontal={({ style }) => <S.Thumb style={style} />}
+        >
+          <S.Expression showResult={showResult}>
+            {expression}
+          </S.Expression>
+        </Scrollbars>
+        <Scrollbars
+          style={{ height: showResult ? 64 : 42 }}
+          renderThumbHorizontal={({ style }) => <S.Thumb style={style} />}
+        >
+          <S.Result showResult={showResult}>
+            {evaluatedExpression}
+          </S.Result>
+        </Scrollbars>
       </S.Screen>
       <S.Keyboard>
         {calculatorButtons.map(({
