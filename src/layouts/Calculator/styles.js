@@ -6,7 +6,7 @@ export const Calculator = styled.div`
   @media (min-width: 768px) {
     height: inherit;
     max-height: 100vh;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
 `;
 
@@ -38,12 +38,14 @@ export const Thumb = styled.div`
 
 export const Expression = styled.div`
   width: 100%;
+  white-space: nowrap;
   color: ${({ showResult }) => (showResult ? '#888' : '#fff')};
   font-size: ${({ showResult }) => (showResult ? '24px' : '42px')};
 `;
 
 export const Result = styled.div`
   width: 100%;
+  white-space: nowrap;
   color: ${({ showResult }) => (showResult ? '#fff' : '#888')};
   font-size: ${({ showResult }) => (showResult ? '42px' : '24px')};
 `;

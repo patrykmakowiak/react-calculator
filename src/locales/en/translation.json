@@ -1,6 +1,11 @@
 {
   "Calculator": "Calculator",
-  "Errors": {
+  "Error": {
     "MathExpression": "Error math expression"
+  },
+  "Link": {
+    "Repository": {
+      "Href": "https://github.com/grandermako/react-calculator"
+    }
   }
 }
