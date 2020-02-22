@@ -1,11 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Scrollbars } from 'react-custom-scrollbars';
+import { FaGithub } from 'react-icons/fa';
 
 import * as S from './styles';
 import useCalculate from '../../hooks/useCalculate';
 import Button from '../../components/Button/Button';
 import calculatorButtons from '../../constants/calculatorButtons';
+import Link from '../../components/Link/Link';
 
 const Calculator = () => {
   const { t } = useTranslation();
@@ -17,6 +19,11 @@ const Calculator = () => {
     <S.Calculator>
       <S.Header>
         {t('Calculator')}
+        <Link
+          href={t('Link.Repository.Href')}
+        >
+          <FaGithub size={30} />
+        </Link>
       </S.Header>
       <S.Screen>
         <Scrollbars
