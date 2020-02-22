@@ -22,7 +22,7 @@ export const App = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #9c88ff;
+  background-color: #10ac84;
 `;
 
 export const Wrapper = styled.div`
