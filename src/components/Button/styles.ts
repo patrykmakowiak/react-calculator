@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 
+type ButtonProps = {
+  readonly width?: string;
+  readonly backgroundColor?: string;
+  readonly color?: string;
+};
+
 // eslint-disable-next-line import/prefer-default-export
-export const Button = styled.button`
+export const Button = styled.button<ButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;

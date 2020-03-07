@@ -4,14 +4,13 @@ import { useTranslation } from 'react-i18next';
 import calculatorButtons from '../constants/calculatorButtons';
 import isNumber from '../utils/isNumber';
 import isNumberLastElement from '../utils/isNumberLastElement';
-import convertPercentage from '../utils/converPercentage';
+import convertPercentage from '../utils/convertPercentage';
 import evaluateExpression from '../utils/evaluateExpression';
 
 const useCalculate = () => {
   const { t } = useTranslation();
-  const [expression, setExpression] = useState('');
-  const [showResult, setShowResult] = useState(false);
-  const [history, setHistory] = useState([]);
+  const [expression, setExpression] = useState<string>('');
+  const [showResult, setShowResult] = useState<boolean>(false);
   const { evaluatedExpression, status } = evaluateExpression(expression, t);
 
   const addValueToExpression = useCallback((value) => {
@@ -22,15 +21,8 @@ const useCalculate = () => {
       setExpression((prevState) => prevState + value);
     } else if (value === '=') {
       setShowResult(true);
-      const copyHistory = [...history];
-      copyHistory.push({
-        expression,
-        result: evaluateExpression(expression),
-        date: new Date(),
-      });
-      setHistory(copyHistory);
     } else if (value === '%') {
-      setExpression((prevState) => `${convertPercentage(prevState + value)}`);
+      setExpression((prevState) => convertPercentage(prevState + value));
     } else if (value === 'AC') {
       setExpression('');
     } else if (value === 'C') {
@@ -40,15 +32,15 @@ const useCalculate = () => {
     } else if (!isNumberLastElement(expression) && expression.length) {
       setExpression((prevState) => prevState.slice(0, -1) + value);
     }
-  }, [expression, history, showResult]);
+  }, [expression, showResult]);
 
-  const handleKeyboard = useCallback((e) => {
+  const handleKeyboard = useCallback((e: KeyboardEvent): void => {
     const selectedButton = calculatorButtons
       .find(({ value, key, keyCodes }) => {
         if (e.key) {
           return value === e.key || key === e.key;
         }
-        if (e.keyCode) {
+        if (e.keyCode && keyCodes) {
           return keyCodes.find((keyCode) => keyCode === e.keyCode);
         }
         return false;
@@ -66,10 +58,10 @@ const useCalculate = () => {
     };
   }, [handleKeyboard]);
 
-  const handleButtonClick = (e) => {
-    const { value } = e.target;
+  const handleButtonClick = useCallback((e: React.MouseEvent<HTMLButtonElement>): void => {
+    const { value } = e.currentTarget;
     addValueToExpression(value);
-  };
+  }, [addValueToExpression]);
 
   return {
     expression,
