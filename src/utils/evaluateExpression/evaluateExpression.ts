@@ -1,20 +1,19 @@
-import { TFunction } from 'i18next';
 import { evaluate } from 'mathjs';
 
-import unifyToEvaluate from './unifyToEvaluate';
+import unifyToEvaluate from '../unifyToEvaluate/unifyToEvaluate';
 
 type EvaluatedExpression = {
-  evaluatedExpression: string;
+  evaluatedExpression: number | string;
   status: string;
 }
-const evaluateExpression = (expressionStr: string, translation: TFunction): EvaluatedExpression => {
+const evaluateExpression = (expressionStr: string, errorMsg: string): EvaluatedExpression => {
   let evaluatedExpression;
   let status;
   try {
     evaluatedExpression = evaluate(unifyToEvaluate(expressionStr));
     status = 'succes';
   } catch (error) {
-    evaluatedExpression = translation('Error.MathExpression');
+    evaluatedExpression = errorMsg;
     status = 'error';
   }
   return { evaluatedExpression, status };

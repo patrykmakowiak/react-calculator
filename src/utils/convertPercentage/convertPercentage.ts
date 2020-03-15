@@ -1,5 +1,5 @@
-const converPercentValueToNumber = (percentValue: string): string => String(+percentValue
-  .replace(/%/g, '') / 100);
+import { converPercentValueToNumber} from '..';
+
 const convertPercentage = (expressionStr: string): string => expressionStr
   .replace(/\d+%/g, converPercentValueToNumber);
 

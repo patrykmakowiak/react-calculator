@@ -7,23 +7,30 @@ type Props = {
   readonly width?: string;
   readonly backgroundColor?: string;
   readonly value: string;
-  readonly onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  readonly handleAddValueToExpression: (value: string) => void;
   readonly children: React.ReactNode;
 };
 
 const Button: React.FC<Props> = ({
-  color, width, backgroundColor, value, onClick, children,
-}) => (
+  color, width, backgroundColor, value, handleAddValueToExpression, children,
+}) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    const { value } = e.currentTarget;
+    handleAddValueToExpression(value);
+  };
+
+  return (
     <S.Button
       color={color}
       width={width}
       backgroundColor={backgroundColor}
       value={value}
-      onClick={onClick}
+      onClick={handleClick}
       type="button"
     >
       {children}
     </S.Button>
-  );
+  )
+};
 
 export default Button;

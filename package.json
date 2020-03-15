@@ -1,6 +1,6 @@
 {
   "name": "calculator",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^3.2.1",
     "@types/mathjs": "^6.0.4",
     "@types/react-custom-scrollbars": "^4.0.6",
     "@types/styled-components": "^5.0.1",
@@ -53,6 +54,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
-    "eslint-plugin-react-hooks": "^1.7.0"
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "react-test-renderer": "^16.13.0"
   }
 }

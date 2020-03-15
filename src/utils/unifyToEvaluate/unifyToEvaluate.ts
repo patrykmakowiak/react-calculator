@@ -1,4 +1,4 @@
-import isNumberLastElement from './isNumberLastElement';
+import { isNumberLastElement } from '..';
 
 const unifyToEvaluate = (expression: string): string => {
   let unifiedExpression = expression;
