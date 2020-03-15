@@ -36,14 +36,22 @@ export const Thumb = styled.div`
   cursor: pointer;
 `;
 
-export const Expression = styled.div`
+type ExpressionProps = {
+  readonly showResult: boolean;
+};
+
+export const Expression = styled.div<ExpressionProps>`
   width: 100%;
   white-space: nowrap;
   color: ${({ showResult }) => (showResult ? '#888' : '#fff')};
   font-size: ${({ showResult }) => (showResult ? '24px' : '42px')};
 `;
 
-export const Result = styled.div`
+type ResultProps = {
+  readonly showResult: boolean;
+};
+
+export const Result = styled.div<ResultProps>`
   width: 100%;
   white-space: nowrap;
   color: ${({ showResult }) => (showResult ? '#fff' : '#888')};

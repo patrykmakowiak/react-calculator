@@ -9,6 +9,7 @@ import {
 const CALCULATOR_BUTTONS = [
   {
     value: 'AC',
+    keyCodes: [],
   },
   {
     value: 'C',
@@ -18,6 +19,7 @@ const CALCULATOR_BUTTONS = [
   },
   {
     value: '%',
+    keyCodes: [],
     icon: (<FaPercent />),
   },
   {

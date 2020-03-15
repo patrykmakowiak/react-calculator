@@ -4,7 +4,7 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import { FaGithub } from 'react-icons/fa';
 
 import * as S from './styles';
-import useCalculate from '../../hooks/useCalculate';
+import useCalculate from '../../hooks/useCalculate/useCalculate';
 import Button from '../../components/Button/Button';
 import calculatorButtons from '../../constants/calculatorButtons';
 import Link from '../../components/Link/Link';
@@ -12,7 +12,7 @@ import Link from '../../components/Link/Link';
 const Calculator = () => {
   const { t } = useTranslation();
   const {
-    expression, evaluatedExpression, showResult, handleButtonClick,
+    expression, evaluatedExpression, showResult, addValueToExpression,
   } = useCalculate();
 
   return (
@@ -53,7 +53,7 @@ const Calculator = () => {
             color={color}
             width={width}
             backgroundColor={backgroundColor}
-            onClick={handleButtonClick}
+            handleAddValueToExpression={addValueToExpression}
           >
             {icon || value}
           </Button>
