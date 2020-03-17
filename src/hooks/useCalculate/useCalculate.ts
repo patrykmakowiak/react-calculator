@@ -1,7 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import calculatorButtons from '../../constants/calculatorButtons';
 import isNumber from '../../utils/isNumber/isNumber';
 import isNumberLastElement from '../../utils/isNumberLastElement/isNumberLastElement';
 import convertPercentage from '../../utils/convertPercentage/convertPercentage';
@@ -33,30 +32,6 @@ const useCalculate = () => {
       setExpression((prevState) => prevState.slice(0, -1) + value);
     }
   }, [expression, showResult]);
-
-  const handleKeyboard = useCallback((e: KeyboardEvent): void => {
-    const selectedButton = calculatorButtons
-      .find(({ value, key, keyCodes }) => {
-        if (e.key) {
-          return value === e.key || key === e.key;
-        }
-        if (e.keyCode && keyCodes) {
-          return keyCodes.find((keyCode) => keyCode === e.keyCode);
-        }
-        return false;
-      });
-
-    if (selectedButton) {
-      addValueToExpression(selectedButton.value);
-    }
-  }, [addValueToExpression]);
-
-  useEffect(() => {
-    window.addEventListener('keydown', handleKeyboard);
-    return () => {
-      window.removeEventListener('keydown', handleKeyboard);
-    };
-  }, [handleKeyboard]);
 
   return {
     expression,

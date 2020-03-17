@@ -5,6 +5,7 @@ import { FaGithub } from 'react-icons/fa';
 
 import * as S from './styles';
 import useCalculate from '../../hooks/useCalculate/useCalculate';
+import useKeyboard from '../../hooks/useKeyboard/useKeyboard';
 import Button from '../../components/Button/Button';
 import calculatorButtons from '../../constants/calculatorButtons';
 import Link from '../../components/Link/Link';
@@ -14,6 +15,7 @@ const Calculator = () => {
   const {
     expression, evaluatedExpression, showResult, addValueToExpression,
   } = useCalculate();
+  useKeyboard(addValueToExpression);
 
   return (
     <S.Calculator>
