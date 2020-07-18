@@ -2,7 +2,7 @@
 
 ![calculator](screenshots/calculator.png)
 
-### [Live demo](https://zen-goodall-b62557.netlify.com/)
+### [Live demo](https://react-calculator-ts.netlify.com/)
 
 # Stack:
 - react

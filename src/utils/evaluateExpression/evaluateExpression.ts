@@ -11,7 +11,7 @@ const evaluateExpression = (expressionStr: string, errorMsg: string): EvaluatedE
   let status;
   try {
     evaluatedExpression = evaluate(unifyToEvaluate(expressionStr));
-    status = 'succes';
+    status = 'success';
   } catch (error) {
     evaluatedExpression = errorMsg;
     status = 'error';

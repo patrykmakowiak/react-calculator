@@ -37,7 +37,7 @@ export const Thumb = styled.div`
 `;
 
 type ExpressionProps = {
-  readonly showResult: boolean;
+  showResult: boolean;
 };
 
 export const Expression = styled.div<ExpressionProps>`
@@ -48,7 +48,7 @@ export const Expression = styled.div<ExpressionProps>`
 `;
 
 type ResultProps = {
-  readonly showResult: boolean;
+  showResult: boolean;
 };
 
 export const Result = styled.div<ResultProps>`

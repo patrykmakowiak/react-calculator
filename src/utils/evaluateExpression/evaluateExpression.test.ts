@@ -5,11 +5,11 @@ const errorMessage = 'error message';
 it('should return evaluated expression number in evaluatedExpression with status success',
   () => {
     expect(evaluateExpression('121+56-78', errorMessage))
-      .toStrictEqual({ evaluatedExpression: 99, status: 'succes' });
+      .toStrictEqual({ evaluatedExpression: 99, status: 'success' });
     expect(evaluateExpression('10+10*10', errorMessage))
-      .toStrictEqual({ evaluatedExpression: 110, status: 'succes' });
+      .toStrictEqual({ evaluatedExpression: 110, status: 'success' });
     expect(evaluateExpression('10+10/10', errorMessage))
-      .toStrictEqual({ evaluatedExpression: 11, status: 'succes' });
+      .toStrictEqual({ evaluatedExpression: 11, status: 'success' });
   }
 );
 
