@@ -9,7 +9,7 @@ it('should return expression with converted percentage to number if input is exp
   }
 );
 
-it('should return the same expression like input if input is expression and do not have percentage value',
+it('should return the same expression like input if input is expression and does not have percentage value',
   () => {
     expect(convertPercentage('5121+512-100')).toBe('5121+512-100');
     expect(convertPercentage('5121+512*135')).toBe('5121+512*135');

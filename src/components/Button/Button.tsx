@@ -3,12 +3,12 @@ import React from 'react';
 import * as S from './styles';
 
 type Props = {
-  readonly color?: string;
-  readonly width?: string;
-  readonly backgroundColor?: string;
-  readonly value: string;
-  readonly handleAddValueToExpression: (value: string) => void;
-  readonly children: React.ReactNode;
+  color?: string;
+  width?: string;
+  backgroundColor?: string;
+  value: string;
+  handleAddValueToExpression: (value: string) => void;
+  children: React.ReactNode;
 };
 
 const Button: React.FC<Props> = ({
