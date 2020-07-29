@@ -9,6 +9,11 @@ import useKeyboard from '../../hooks/useKeyboard/useKeyboard';
 import Button from '../../components/Button/Button';
 import calculatorButtons from '../../constants/calculatorButtons';
 import Link from '../../components/Link/Link';
+import {
+  SIZE_ICON,
+  SMALL_HEIGHT,
+  LARGE_HEIGHT,
+} from '../../constants';
 
 const Calculator = () => {
   const { t } = useTranslation();
@@ -24,12 +29,12 @@ const Calculator = () => {
         <Link
           href={t('Link.Repository.Href')}
         >
-          <FaGithub size={30} />
+          <FaGithub size={SIZE_ICON} />
         </Link>
       </S.Header>
       <S.Screen>
         <Scrollbars
-          style={{ height: showResult ? 42 : 64 }}
+          style={{ height: showResult ? SMALL_HEIGHT : LARGE_HEIGHT }}
           renderThumbHorizontal={({ style }) => <S.Thumb style={style} />}
         >
           <S.Expression showResult={showResult}>
@@ -37,7 +42,7 @@ const Calculator = () => {
           </S.Expression>
         </Scrollbars>
         <Scrollbars
-          style={{ height: showResult ? 64 : 42 }}
+          style={{ height: showResult ? LARGE_HEIGHT : SMALL_HEIGHT }}
           renderThumbHorizontal={({ style }) => <S.Thumb style={style} />}
         >
           <S.Result showResult={showResult}>
@@ -49,17 +54,17 @@ const Calculator = () => {
         {calculatorButtons.map(({
           icon, value, color, backgroundColor, width,
         }) => (
-          <Button
-            key={value}
-            value={value}
-            color={color}
-            width={width}
-            backgroundColor={backgroundColor}
-            handleAddValueToExpression={addValueToExpression}
-          >
-            {icon || value}
-          </Button>
-        ))}
+            <Button
+              key={value}
+              value={value}
+              color={color}
+              width={width}
+              backgroundColor={backgroundColor}
+              handleAddValueToExpression={addValueToExpression}
+            >
+              {icon || value}
+            </Button>
+          ))}
       </S.Keyboard>
     </S.Calculator>
   );
