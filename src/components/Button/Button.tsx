@@ -14,8 +14,7 @@ type Props = {
 const Button: React.FC<Props> = ({
   color, width, backgroundColor, value, handleAddValueToExpression, children,
 }) => {
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    const { value } = e.currentTarget;
+  const handleClick = ({ currentTarget: { value } }: React.MouseEvent<HTMLButtonElement>): void => {
     handleAddValueToExpression(value);
   };
 

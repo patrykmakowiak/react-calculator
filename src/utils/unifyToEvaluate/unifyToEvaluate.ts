@@ -1,10 +1,7 @@
 import { isNumberLastElement } from '..';
 
 const unifyToEvaluate = (expression: string): string => {
-  let unifiedExpression = expression;
-  if (!isNumberLastElement(expression)) {
-    unifiedExpression = expression.slice(0, -1);
-  }
+  const unifiedExpression = !isNumberLastElement(expression) ? expression.slice(0, -1) : expression;
   return unifiedExpression;
 };
 

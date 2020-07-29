@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   html {
-  box-sizing: border-box;
+    box-sizing: border-box;
   }
   *, *:before, *:after {
     box-sizing: inherit;
