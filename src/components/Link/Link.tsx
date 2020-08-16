@@ -7,7 +7,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Link: React.FC<Props> = ({ href, children }) => (
+const Link = ({ href, children }: Props) => (
   <S.StyledBtn
     href={href}
   >
